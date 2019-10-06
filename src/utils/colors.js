@@ -5,3 +5,4 @@ export const subtextColor = '#222222';
 export const linkColor = '#0473f4';
 export const buttonColor = '#0473f4';
 export const whiteColor = '#ffffff';
+export const errorBackgroundColor = '#facaca';

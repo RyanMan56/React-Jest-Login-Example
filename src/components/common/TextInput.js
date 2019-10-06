@@ -7,7 +7,7 @@ const Styles = {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: ${({ error }) => error ? 10 : 30}px;
   `,
   Subtext: styled.span`
     font-size: 12px;
@@ -24,9 +24,10 @@ const Styles = {
     border-style: solid;
     background-color: ${inputBackgroundColor};
     font-size: ${({ fontSize }) => fontSize || 18}px;
-    padding: ${({ padding }) => padding || '8px'};
+    padding: ${({ padding }) => padding || '12px'};
     border-collapse: separate;
     box-shadow: -0.5px 1px 1px 0px #dedede inset, 0.5px -0.5px 1px 0px #dedede inset;
+    outline-offset: ${({ error }) => error ? -1 : -2}px;
   `,
 };
 
@@ -34,7 +35,7 @@ const TextInput = (props) => {
   const { label, error, showErrorMessage } = props;
 
   return (
-    <Styles.Wrapper>
+    <Styles.Wrapper error={error && showErrorMessage}>
       <Styles.Subtext>{label}</Styles.Subtext>
       <Styles.Input {...props} />
       {error && showErrorMessage && (
