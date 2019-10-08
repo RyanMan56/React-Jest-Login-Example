@@ -8,6 +8,7 @@ const Styles = {
   // box-shadow: https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow#Browser_compatibility
   // filter: https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility
   Container: styled.div`
+    display: flex;
     width: 382px;
     background-color: ${whiteColor};
     box-shadow: 0 12px 35px 0 rgba(30, 6, 107, 0.12), 0 2px 4px 0 rgba(1, 4, 32, 0.15);

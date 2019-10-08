@@ -14,7 +14,6 @@ const Styles = {
     border-radius: 50%;
     background-color: #f48d04;
     margin: 0 auto;
-    transform: translateY(-35px);
     margin-bottom: -5px;
     overflow: hidden;
   `,
@@ -25,12 +24,13 @@ const Styles = {
   `,
 };
 
-const Avatar = ({ email }) => {
+const Avatar = (props) => {
+  const { email } = props;
   const hash = email
     ? md5(email.trim().toLowerCase())
     : null;
   return (
-    <Styles.Wrapper>
+    <Styles.Wrapper {...props}>
       <Styles.Image hash={hash} alt="avatar" />
     </Styles.Wrapper>
   )
