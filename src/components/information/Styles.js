@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import CustomLink from '../common/CustomLink';
 import { Title, Subtitle } from '../common/Text';
-import Avatar from '../common/Avatar';
+import Avatar from '../common/avatar/Avatar';
 import Spinner from '../common/Spinner';
 
 export default {
@@ -22,7 +22,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 42px;
+    margin: ${({ noMargin }) => noMargin ? 0 : '0 42'}px;
   `,
   Title: styled(Title)`
     margin-top: 16px;

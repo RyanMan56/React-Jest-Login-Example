@@ -8,3 +8,4 @@ export const whiteColor = '#ffffff';
 export const errorBackgroundColor = '#facaca';
 export const titleColor = '#7b7c99';
 export const subtitleColor = '#0473f4';
+export const forgotPasswordMessageColor = '#2b2b2b';

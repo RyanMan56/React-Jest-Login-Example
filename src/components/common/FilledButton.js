@@ -31,11 +31,14 @@ const Styles = {
   `,
 };
 
-const FilledButton = ({ text }) => (
-  <Styles.Button>
-    <Styles.Text>{text}</Styles.Text>
-    <img src={arrow} alt="arrow-icon" width={16} />
-  </Styles.Button>
-);
+const FilledButton = (props) => {
+  const { text } = props;
+  return (
+    <Styles.Button {...props}>
+      <Styles.Text>{text}</Styles.Text>
+      <img src={arrow} alt="arrow-icon" width={16} />
+    </Styles.Button>
+  );
+}
 
 export default FilledButton;

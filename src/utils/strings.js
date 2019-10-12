@@ -1,3 +1,7 @@
+export const CommonStrings = {
+  EmailAddress: 'Email Address',
+};
+
 export const LoginStrings = {
   EmailAddress: 'Email Address',
   Password: 'Password',
@@ -9,9 +13,27 @@ export const LoginStrings = {
   PasswordError: `You have entered an invalid password`,
 };
 
-export const InformationStrings = {
+export const LoggingInStrings = {
   LoggingIn: `Logging in securely…`,
-  SendingEmail: 'Sending forgotten password email to...',
-  EmailSent: 'Email sent to',
-  BackToLogin: 'Back to Login',
 };
+
+export const ProfileStrings = {
+  Congratulations: `Congratulations! You’ve successfully logged in to the box. There’s nothing else to do here.`,
+  Logout: `Logout`,
+};
+
+export const ForgotPasswordStrings = {
+  Message: `If you are having trouble logging in please enter your email address below and we will send you an email with steps to take to change your password.`,
+  ErrorEmail: `Please enter a valid email address`,
+  Back: 'Back',
+  ChangePassword: 'Change Password',
+};
+
+export const ForgotPasswordActiveStrings = {
+  Message: `Sending forgotten password email to...`,
+};
+
+export const ForgotPasswordSuccessStrings = {
+  BackToLogin: 'Back to Login',
+  EmailSent: 'Email sent to',
+}

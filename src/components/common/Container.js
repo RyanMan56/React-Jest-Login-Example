@@ -17,9 +17,9 @@ const Styles = {
   `,
 }
 
-const Container = ({ children }) => (
-  <Styles.Container>
-    {children}
+const Container = (props) => (
+  <Styles.Container {...props}>
+    {props.children}
   </Styles.Container>
 );
 

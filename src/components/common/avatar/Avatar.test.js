@@ -1,8 +1,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
-import Login from './Login';
+import Avatar, { hashEmail } from './Avatar';
 
 let container = null;
 beforeEach(() => {
@@ -20,11 +19,10 @@ afterEach(() => {
 
 it('renders without crashing', () => {
   act(() => {
-    render(
-      <BrowserRouter>
-        <Login />
-      </BrowserRouter>
-      , container
-    );
+    render(<Avatar email="test@test.com" />, container);
   });
+});
+
+it('successfully hashes email address', () => {
+  expect(hashEmail("test@test.com")).toBe('b642b4217b34b1e8d3bd915fc65c4452');
 });

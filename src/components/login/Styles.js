@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Avatar from '../common/Avatar';
+import Avatar from '../common/avatar/Avatar';
 
 export default {
   Wrapper: styled.div`

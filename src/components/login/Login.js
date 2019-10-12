@@ -3,11 +3,12 @@ import { Redirect } from 'react-router-dom';
 import Container from '../common/Container';
 import Background from '../common/Background';
 import TextInput from '../common/TextInput';
-import { LoginStrings, InformationStrings } from '../../utils/strings';
+import { LoginStrings, LoggingInStrings, CommonStrings } from '../../utils/strings';
 import Styles from './Styles';
 import CustomLink from '../common/CustomLink';
 import FilledButton from '../common/FilledButton';
 import ErrorBox from '../common/ErrorBox';
+import { emailRegex } from '../../utils';
 
 class Login extends Component {
   state = {
@@ -21,7 +22,6 @@ class Login extends Component {
   };
 
   setEmail(email) {
-    const emailRegex = RegExp('.+@.+[\.].+');
     const emailValid = emailRegex.test(email);
     this.setState({ email, emailValid, showEmailError: false });
   }
@@ -58,7 +58,7 @@ class Login extends Component {
             pathname: "/logging-in", 
             state: {
               email,
-              message: InformationStrings.LoggingIn,
+              message: LoggingInStrings.LoggingIn,
             }
           }} push />
         }
@@ -69,7 +69,7 @@ class Login extends Component {
               <ErrorBox error={bigError} />
               <form onSubmit={e => this.loginUser(e, email, password)} noValidate>
                 <TextInput
-                  label={LoginStrings.EmailAddress}
+                  label={CommonStrings.EmailAddress}
                   name='email'
                   type='email'
                   value={email}
@@ -87,8 +87,13 @@ class Login extends Component {
                   onChange={e => this.setPassword(e.target.value)}
                 />
                 <Styles.ButtonWrapper>
-                  <CustomLink to='/forgot-password'>{LoginStrings.ForgotPassword}</CustomLink>
-                  <FilledButton text={LoginStrings.Login} />
+                  <CustomLink to={{
+                    pathname: '/forgot-password',
+                    state: {
+                      email
+                    }
+                  }}>{LoginStrings.ForgotPassword}</CustomLink>
+                  <FilledButton type="submit" text={LoginStrings.Login} />
                 </Styles.ButtonWrapper>
               </form>
             </Styles.Wrapper>
