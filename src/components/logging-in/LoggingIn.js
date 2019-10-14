@@ -14,14 +14,15 @@ class LoggingIn extends Component {
     setTimeout(() => {
       this.setState({ redirectToProfile: true });
     }, 3000);
-    this.getUser(this.props.location.state.email);
+    const email = this.props.location && this.props.location.state ? this.props.location.state.email : '';
+    this.getUser(email);
   }
 
   getUser = (email) => {
-    // using axiot to make requests, as it has wider browser support than fetch
+    // using axios to make requests, as it has wider browser support than fetch
     // axios: https://www.npmjs.com/package/axios#browser-support
     // vanilla fetch: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-    axios.get('https://randomuser.me/api/')
+    return axios.get('https://randomuser.me/api/')
       .then(res => {
         try {
           const { data } = res;
@@ -32,17 +33,20 @@ class LoggingIn extends Component {
           const role = result.login.username.slice(0, result.login.username.length - 3);
           const user = { email, name, role };
           this.setState({ user });
+          return user;
         } catch (error) {
           this.setState({ user: null });
+          return null;
         }
       })
       .catch(err => {
         this.setState({ user: null });
+        return null;
       });
   }
 
   render() {
-    const { email, message } = this.props.location.state;
+    const { email, message } = (this.props.location && this.props.location.state) || {};
     const { redirectToProfile, user } = this.state;
     return(
       <Fragment>

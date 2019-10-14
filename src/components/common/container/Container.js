@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { whiteColor } from '../../utils/colors';
+import { whiteColor } from '../../../utils/colors';
 
 const Styles = {
   // Here we're using the box-shadow css property instead of filter (which was suggested by the designs)

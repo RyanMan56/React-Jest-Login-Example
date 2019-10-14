@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { errorBackgroundColor, subtextColor } from '../../utils/colors';
+import { errorBackgroundColor, subtextColor } from '../../../utils/colors';
 
 const Styles = {
   Wrapper: styled.div`

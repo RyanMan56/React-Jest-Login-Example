@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { linkColor } from '../../utils/colors';
+import { linkColor } from '../../../utils/colors';
 
 const Styles = {
   Link: styled(Link)`
@@ -15,7 +15,7 @@ const Styles = {
 };
 
 const CustomLink = (props) => (
-  <Styles.Link {...props}>{props.children}</Styles.Link>
+  <Styles.Link to='#' {...props}>{props.children}</Styles.Link>
 );
 
 export default CustomLink;

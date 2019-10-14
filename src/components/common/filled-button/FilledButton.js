@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { whiteColor } from '../../utils/colors';
-import arrow from '../../assets/arrow.svg';
+import { whiteColor } from '../../../utils/colors';
+import arrow from '../../../assets/arrow.svg';
 
 const Styles = {
   Button: styled.button`

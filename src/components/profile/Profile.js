@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
-import Background from '../common/Background';
-import Container from '../common/Container';
+import Background from '../common/background';
+import Container from '../common/container';
 import Styles from './Styles';
-import { Title } from '../common/Text';
+import { Title } from '../common/text/Text';
 import { ProfileStrings } from '../../utils/strings';
 
 class Profile extends Component {
@@ -16,7 +16,7 @@ class Profile extends Component {
   }
   
   render() {
-    const { email, name, role } = this.props.location.state;
+    const { email, name, role } = (this.props.location && this.props.location.state) || {};
     return (
       <Fragment>
         {this.state.redirectToLogin && <Redirect to="/" />}

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import Background from '../common/Background';
-import Container from '../common/Container';
+import Background from '../common/background';
+import Container from '../common/container';
 import tick from '../../assets/tick.svg';
 import Styles from './Styles';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { titleColor, subtitleColor } from '../../utils/colors';
+import { titleColor, subtitleColor } from '../../../utils/colors';
 
 const Styles = {
   Title: styled.span`
@@ -15,5 +15,4 @@ const Styles = {
 };
 
 export const Title = (props) => (<Styles.Title {...props}>{props.children}</Styles.Title>)
-
 export const Subtitle = (props) => (<Styles.Subtitle {...props}>{props.children}</Styles.Subtitle>)

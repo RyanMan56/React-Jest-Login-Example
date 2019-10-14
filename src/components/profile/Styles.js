@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Avatar from '../common/avatar/Avatar';
-import { Subtitle } from '../common/Text';
+import Avatar from '../common/avatar';
+import { Subtitle } from '../common/text/Text';
 import { titleColor } from '../../utils/colors';
-import FilledButton from '../common/FilledButton';
+import FilledButton from '../common/filled-button';
 
 export default {
   Wrapper: styled.div`

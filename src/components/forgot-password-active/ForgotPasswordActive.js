@@ -17,7 +17,7 @@ class ForgotPasswordActive extends Component {
 
   render() {
     const { redirectToForgotPasswordSuccess } = this.state;
-    const { email } = this.props.location.state;
+    const { email } = (this.props.location && this.props.location.state) || {};
     return (
       <Fragment>
         {redirectToForgotPasswordSuccess &&

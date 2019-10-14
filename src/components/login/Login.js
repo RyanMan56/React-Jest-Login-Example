@@ -1,13 +1,13 @@
 import React, { Fragment, Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import Container from '../common/Container';
-import Background from '../common/Background';
-import TextInput from '../common/TextInput';
+import Container from '../common/container';
+import Background from '../common/background';
+import TextInput from '../common/text-input';
 import { LoginStrings, LoggingInStrings, CommonStrings } from '../../utils/strings';
 import Styles from './Styles';
-import CustomLink from '../common/CustomLink';
-import FilledButton from '../common/FilledButton';
-import ErrorBox from '../common/ErrorBox';
+import CustomLink from '../common/custom-link';
+import FilledButton from '../common/filled-button';
+import ErrorBox from '../common/error-box';
 import { emailRegex } from '../../utils';
 
 class Login extends Component {
@@ -42,6 +42,7 @@ class Login extends Component {
   }
 
   setBigErrorMessage = (email, showEmailError, showPasswordError) => {
+    // if showEmailError is true, then we want to show the email error instead of the password error
     const bigError = showEmailError
       ? LoginStrings.BigEmailError.replace('{{email}}', email)
       : showPasswordError && LoginStrings.BigPasswordError;

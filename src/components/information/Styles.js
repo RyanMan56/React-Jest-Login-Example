@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import CustomLink from '../common/CustomLink';
-import { Title, Subtitle } from '../common/Text';
+import CustomLink from '../common/custom-link';
+import { Title, Subtitle } from '../common/text/Text';
 import Avatar from '../common/avatar/Avatar';
-import Spinner from '../common/Spinner';
+import Spinner from '../common/spinner/Spinner';
 
 export default {
   ReturnLink: styled(CustomLink)`

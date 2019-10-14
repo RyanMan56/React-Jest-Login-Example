@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
-import Background from '../common/Background';
-import Container from '../common/Container';
-import TextInput from '../common/TextInput';
+import Background from '../common/background';
+import Container from '../common/container';
+import TextInput from '../common/text-input';
 import Styles from './Styles';
 import { ForgotPasswordStrings, CommonStrings } from '../../utils/strings';
 import { emailRegex } from '../../utils';
-import CustomLink from '../common/CustomLink';
-import FilledButton from '../common/FilledButton';
+import CustomLink from '../common/custom-link';
+import FilledButton from '../common/filled-button';
 
 class ForgotPassword extends Component {
   state = {
@@ -18,7 +18,7 @@ class ForgotPassword extends Component {
   };
 
   componentDidMount() {
-    this.setState({ email: this.props.location.state.email })
+    this.setState({ email: this.props.location && this.props.location.state && this.props.location.state.email })
   }
 
   setEmail = (email) => {
@@ -55,6 +55,7 @@ class ForgotPassword extends Component {
               <Styles.Message>{ForgotPasswordStrings.Message}</Styles.Message>
               <form onSubmit={e => this.sendEmail(e, email)}>
                 <TextInput
+                  id='email'
                   label={CommonStrings.EmailAddress}
                   name="email"
                   type="email"
