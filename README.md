@@ -17,5 +17,8 @@ Within every component folder can be found an `index.js` file, acting as a short
 ## Test files
 Every test file contains a shallow render of its related component. Testing that every component shallowly renders correctly ensures that bugs are contained to the file that triggered them. Additional tests are present in components with more complex functionality.
 
+## Utils
+`src/utils` contains some basic regex for validating email addresses, along with colours and strings used across the web app. Additional functionality can easily be added in to switch between language files, which would be very useful for localisation.
+
 ## Assets
 Assets are located in `src/assets`.
