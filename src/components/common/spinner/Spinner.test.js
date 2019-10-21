@@ -1,4 +1,5 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import Spinner from './Spinner';
 
@@ -6,3 +7,11 @@ import Spinner from './Spinner';
 it('shallowly renders without crashing', () => {
   shallow(<Spinner />);
 });
+
+it('matches snapshot', () => {
+  const spinner = renderer
+    .create(
+      <Spinner />
+    ).toJSON();
+  expect(spinner).toMatchSnapshot();
+})
